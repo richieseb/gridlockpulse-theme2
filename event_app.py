@@ -113,7 +113,7 @@ if st.sidebar.button("Run Data-Driven Impact Assessment"):
     r3.error(f"**Diversion Detour Configurations:**\n\nActivate **{detours} Detours** to reroute traffic.")
     st.write("---")
     
-   # 5. Hourly Forecast Projection Graphs
+    # 5. Hourly Forecast Projection Graphs 
     st.subheader("📈 Spatiotemporal Congestion Surge Ripple Forecast Curve")
     hours = list(range(24))
     normal_baseline = []
