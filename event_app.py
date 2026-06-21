@@ -1,4 +1,3 @@
-%writefile event_app.py
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -130,11 +129,11 @@ if st.sidebar.button("Run Data-Driven Impact Assessment"):
             surge_demand += (disruption_score * 0.4)
         predicted_surge.append(min(1.0, surge_demand))
         
-    # Combine into a clean long-form DataFrame for Plotly multi-line mapping
+    # Combine into a clean long-form DataFrame with safe bracketed list concatenation
     trend_df = pd.DataFrame({
         "Hour of the Day": hours * 2,
         "Breakdown Probability": normal_baseline + predicted_surge,
-        "Scenario Pipeline": ["Normal City Baseline"] * 24 + ["Event-Driven Impact Surge"] * 24
+        "Scenario Pipeline": (["Normal City Baseline"] * 24) + (["Event-Driven Impact Surge"] * 24)
     })
     
     # Generate multi-line visualization with color mapping
@@ -149,6 +148,7 @@ if st.sidebar.button("Run Data-Driven Impact Assessment"):
     )
     
     st.plotly_chart(fig, use_container_width=True)
+
 # 6. Post-Event Learning Interface
 st.write("---")
 st.subheader("🔄 Post-Event Learning & Continuous Strategy Evaluation Registry")
