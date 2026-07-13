@@ -49,3 +49,5 @@ If you wish to execute the web dashboard framework on your local machine, follow
    ```bash
    git clone [https://github.com/](https://github.com/)[YOUR-USERNAME]/GridlockPulse-Event-Optimizer.git
    cd GridlockPulse-Event-Optimizer
+
+2. Streamlit: https://gridlockpulse-theme2-richieseb29.streamlit.app/
